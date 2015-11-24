@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>cushion – cushion v0.0.1</title>
+    <title>cushion – cushion v0.0.2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.11.0">
     <link rel="stylesheet" href="dist/app-6bc9434c82.css" />
@@ -28,7 +28,7 @@
         cushion
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.0.1
+        v0.0.2
       </h2>
     </div>
     
@@ -66,10 +66,13 @@ Installation
 </h2>
   
 <ol style="list-style-type: decimal">
-<li><p>Add cushion to your list of dependencies in <code>mix.exs</code>:</p>
+<li><p>Add cushion and ibrowse to your list of dependencies in <code>mix.exs</code>:</p>
 <pre><code class="elixir">def deps do
-  [{:cushion, &quot;~&gt; 0.0.1&quot;}]
-end</code></pre></li>
+  [{:cushion, &quot;~&gt; 0.0.1&quot;},{:ibrowse, github: &quot;cmullaparthi/ibrowse&quot;, tag: &quot;v4.1.2&quot;}]
+end</code></pre>
+<blockquote>
+<p>ibrowse is not on hex, so you have to add it yourself</p>
+</blockquote></li>
 <li><p>cushion uses HTTPotion so you need to add ibrowse to your application:</p>
 <pre><code class="elixir">def application do
   [applications: [:ibrowse]]
@@ -79,12 +82,12 @@ end</code></pre></li>
 Usage
 </h2>
 <p>cushion is two parts: a <a href="Cushion.Update.html"><code>Cushion.Update</code></a> struct and <a href="Cushion.html#post_update/1"><code>Cushion.post_update/1</code></a></p>
-<h3 id="cushion.update"><a href="Cushion.Update.html"><code>Cushion.Update</code></a></h3>
+<h3 id="cushion.update">Cushion.Update</h3>
 <p><a href="Cushion.Update.html"><code>Cushion.Update</code></a> contains all the information that you need to construct an update.</p>
 <pre><code class="iex elixir">iex&gt; %Cushion.Update{text: &quot;The update text&quot;, profiles: [&quot;1234&quot;]}
 %Cushion.Update{attachment: false, profiles: [&quot;1234&quot;], shorten: true, text: &quot;Update Text&quot;}</code></pre>
 <p>You can get more infomration about the parameters from the docs.</p>
-<h3 id="cushion.post_update1">'Cushion.post_update/1`</h3>
+<h3 id="cushion.post_update1">Cushion.post_update/1</h3>
 <p>Once you have an update struct, you can simple post it using <code>Custion.post_update/1</code>:</p>
 <pre><code class="iex elixir">iex&gt; Cushion.post_update(%Cushion.Update{text: &quot;Some text&quot;, profiles: [&quot;1234&quot;]})
 %HTTPotion.Response{...}</code></pre>

@@ -5,11 +5,13 @@ More to come...**TODO: Add description**
 
 ## Installation
 
-  1. Add cushion to your list of dependencies in `mix.exs`:
+  1. Add cushion and ibrowse to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:cushion, "~> 0.0.1"}]
+          [{:cushion, "~> 0.0.1"},{:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"}]
         end
+
+     > ibrowse is not on hex, so you have to add it yourself
 
   2. cushion uses HTTPotion so you need to add ibrowse to your application:
 
