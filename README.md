@@ -1,10 +1,9 @@
-# Cushion
+# cushion
 
-**TODO: Add description**
+A really simple Buffer API client in Elixir
+More to come...**TODO: Add description**
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
   1. Add cushion to your list of dependencies in `mix.exs`:
 
@@ -12,8 +11,8 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
           [{:cushion, "~> 0.0.1"}]
         end
 
-  2. Ensure cushion is started before your application:
+  2. cushion uses HTTPotion so you need to add ibrowse to your application:
 
         def application do
-          [applications: [:cushion]]
+          [applications: [:ibrowse]]
         end
