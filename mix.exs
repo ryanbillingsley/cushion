@@ -44,7 +44,7 @@ defmodule Cushion.Mixfile do
 
   defp docs do
      [
-       extras: ["README.md"]
+       extras: ["README.md": [title: "README"]]
      ]
   end
 end
