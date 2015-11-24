@@ -3,12 +3,15 @@ defmodule Cushion.Mixfile do
 
   def project do
     [app: :cushion,
+     name: "cushion",
+     source_url: "https://www.github.com/ryanbillingsley/cushion",
      description: description,
      version: "0.0.1",
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      package: package,
+     docs: docs,
      deps: deps]
   end
 
@@ -19,7 +22,8 @@ defmodule Cushion.Mixfile do
   defp deps do
     [
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
-      {:httpotion, "~> 2.1.0"}
+      {:httpotion, "~> 2.1.0"},
+      {:ex_doc, "~> 0.11", only: :dev}
     ]
   end
 
@@ -36,5 +40,11 @@ defmodule Cushion.Mixfile do
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/ryanbillingsley/cushion"}
     ]
+  end
+
+  defp docs do
+     [
+       extras: ["README.md"]
+     ]
   end
 end

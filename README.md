@@ -21,7 +21,7 @@ More to come...**TODO: Add description**
 
 cushion is two parts: a `Cushion.Update` struct and `Cushion.post_update/1`
 
-### `Cushion.Update`
+### Cushion.Update
 
 `Cushion.Update` contains all the information that you need to construct an update.
 
@@ -32,7 +32,7 @@ iex> %Cushion.Update{text: "The update text", profiles: ["1234"]}
 
 You can get more infomration about the parameters from the docs.
 
-### 'Cushion.post_update/1`
+### Cushion.post_update/1
 
 Once you have an update struct, you can simple post it using `Custion.post_update/1`:
 

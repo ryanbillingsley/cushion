@@ -1,13 +1,20 @@
 defmodule Cushion do
+  @moduledoc """
+  Cushion has function for creating updates using the Buffer API
+  """
+
   @doc """
   Posts an update to Buffer using the `Cushion.Update` struct.
 
   Returns the response struct from the api call.
 
-  Examples
-      iex> Cushion.post_update(%Cushion.Update{text: "Some text", profiles: ["1234"]})
-      %HTTPotion.Response{...}
+  ## Examples
+  ```
+  iex> Cushion.post_update(%Cushion.Update{text: "Some text", profiles: ["1234"]})
+  %HTTPotion.Response{...}
+  ```
   """
+  @spec post_update(%Cushion.Update{}) :: %HTTPotion.Response{}
   def post_update(%Cushion.Update{} = update) do
     access_token = Application.get_env(:cushion, :buffer_access_token)
     url = URI.encode "https://api.bufferapp.com/1/updates/create.json?access_token=#{access_token}"
